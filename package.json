@@ -1,0 +1,32 @@
+{
+  "name": "baidu-ai-node-sdk",
+  "version": "1.0.0",
+  "description": "Baidu AI plateform node.js-SDK",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codingfuns/AI-SERVER.git"
+  },
+  "keywords": [
+    "基于百度AI图像识别"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codingfuns/AI-SERVER/issues"
+  },
+  "homepage": "https://github.com/codingfuns/AI-SERVER#readme",
+  "dependencies": {
+    "baidu-aip-sdk": "^2.2.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "mongodb": "^3.0.1",
+    "mongoose": "^4.11.4",
+    "mongoskin": "^2.1.0",
+    "multer": "^1.3.0",
+    "request": "^2.85.0"
+  }
+}
