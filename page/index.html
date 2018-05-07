@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input id="file" type="file">
+    <button id="btn">点击上传</button>
+    <img id="img" src="" alt="">
+    <script>
+        var btn = document.getElementById("btn"),
+            file = document.getElementById("file"),
+            img = document.getElementById("img");
+        btn.onclick = function () {
+            // 获取文件
+            var upload_file = file.files[0],
+                formdata = new FormData(),
+                xhr = new XMLHttpRequest();
+            
+            formdata.append('date',new Date().toLocaleString());  
+            // 将文件添加到formdata对象中，（注：下面的file字段名在node中有用）
+            formdata.append('file', upload_file);
+            xhr.open("POST", "/upload", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    img.src = xhr.responseText;
+                    // console.log(xhr.responseText)
+                }
+            }
+            xhr.send(formdata);
+        }
+    </script>
+</body>
+</html>
