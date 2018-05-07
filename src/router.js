@@ -92,7 +92,7 @@ app.post("/upload", upload.single('file'),(req, res) => {
     client.advancedGeneral(imgage).then(function(result) {
         var sendData = {
             animalRes:result,
-            imgUrl:data
+            imgUrl:'./uploads/' + req.file.filename
         }
         console.log(JSON.stringify(sendData));
         res.send(JSON.stringify(sendData))

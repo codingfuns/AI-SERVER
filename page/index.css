@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    width: 100%;
+    height: 100%;
+    background-color: #d2caca;
+}
+body{
+    height: 80%;
+}
+#app{
+    width: 100%;
+    height: 100%;
+}
+.content-wrap{
+    text-align: center;
+    margin-top: 50px;
+}
+.img-wrap{
+    text-align: center;
+    margin-top: 20px;
+    width: 50%;
+    height: 500px;
+    float: left;
+}
+.result-wrap{
+    text-align: center;
+    margin-top: 20px;
+    width: 50%;
+    height: 500px;
+    float: right;
+}
+.result-wrap>ul>li{
+    height: 90px;
+    line-height: 40px;
+    list-style: none;
+    border:solid 1px #c0c0c0
+}
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px
+}
