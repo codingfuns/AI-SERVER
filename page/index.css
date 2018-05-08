@@ -44,3 +44,15 @@ body{
     align-items: center;
     height: 500px
 }
+.init{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    height: 500px
+}
+.init span{
+    font:bold 18px '';
+    color: #1296db;
+    margin-top: 10px
+}

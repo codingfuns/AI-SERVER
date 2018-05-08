@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="./index.css">
     <script src="./lib/vue.min.js"></script>
     <script src="./lib/mint-ui.js"></script>
-    <title>Document</title>
+    <title>AI识图</title>
 </head>
 <body>
-    <div id="app">
+    <div id="app" @dragover = "allowDrag(event)" @drop = "drop(event)">
        <mt-header fixed title="火眼金睛"></mt-header>
        <div class = "content-wrap">
             <input type="file" id = "file">
@@ -38,37 +38,10 @@
        <div v-if = "loading" class = "loading">
           <mt-spinner type="double-bounce" color="#26a2ff" size = 100></mt-spinner>
        </div>
-       
-       
-       
+       <div v-if = "init" class = "init">
+            <img src="./lib/upload.png" alt=""><span>拖拽上传</span>
+       </div>   
     </div>
     <script src="./index.js"></script>
-    <!-- <input id="file" type="file">
-    <button id="btn">点击上传</button>
-    <img id="img" src="" alt="">
-    <script>
-        var btn = document.getElementById("btn"),
-            file = document.getElementById("file"),
-            img = document.getElementById("img");
-        btn.onclick = function () {
-            // 获取文件
-            var upload_file = file.files[0],
-                formdata = new FormData(),
-                xhr = new XMLHttpRequest();
-            
-            formdata.append('date',new Date().toLocaleString());  
-            // 将文件添加到formdata对象中，（注：下面的file字段名在node中有用）
-            formdata.append('file', upload_file);
-            xhr.open("POST", "/upload", true);
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    var res = JSON.parse(xhr.responseText)
-                    img.src = res.imgUrl;
-                    // console.log(xhr.responseText)
-                }
-            }
-            xhr.send(formdata);
-        }
-    </script> -->
 </body>
 </html>
